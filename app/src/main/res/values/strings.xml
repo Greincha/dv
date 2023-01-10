@@ -1,0 +1,139 @@
+<resources>
+    <string name="app_name">Job</string>
+    <string-array name="alimentation">
+        <item>Disjoncteur</item>
+        <item>PC</item>
+    </string-array>
+
+
+    <string-array name="Besoin">
+        <item>Besoin</item>
+        <item>Chaud</item>
+        <item>Froid</item>
+    </string-array>
+
+    <string-array name="Piece">
+        <item>  </item>
+        <item>salon</item>
+        <item>cuisine</item>
+        <item>SAM</item>
+        <item>CH 1</item>
+        <item>CH 2</item>
+        <item>CH 3</item>
+        <item>CH 4</item>
+        <item>Bureau</item>
+
+    </string-array>
+
+    <string-array name="Ville">
+        <item>Ville</item>
+        <item>Carces - 83570</item>
+        <item>Correns - 83570</item>
+        <item>Cotignac - 83570</item>
+        <item>Entrecastaux - 83570</item>
+        <item>Montfort - 83570</item>
+        <item>Lorgues - 83510</item>
+
+
+    </string-array>
+
+    <string-array name="Arrivée">
+        <item> H Arrivée </item>
+        <item>08:00</item>
+        <item>08:30</item>
+        <item>09:00</item>
+        <item>09:30</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
+        <item>12:00</item>
+        <item>12:30</item>
+        <item>13:00</item>
+        <item>13:30</item>
+        <item>14:00</item>
+        <item>14:30</item>
+        <item>15:00</item>
+        <item>15:30</item>
+        <item>16:00</item>
+        <item>16:30</item>
+        <item>17:00</item>
+        <item>17:30</item>
+        <item>18:00</item>
+        <item>18:30</item>
+    </string-array>
+
+    <string-array name="Départ">
+        <item> H de Départ </item>
+        <item>08:00</item>
+        <item>08:30</item>
+        <item>09:00</item>
+        <item>09:30</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
+        <item>12:00</item>
+        <item>12:30</item>
+        <item>13:00</item>
+        <item>13:30</item>
+        <item>14:00</item>
+        <item>14:30</item>
+        <item>15:00</item>
+        <item>15:30</item>
+        <item>16:00</item>
+        <item>16:30</item>
+        <item>17:00</item>
+        <item>17:30</item>
+        <item>18:00</item>
+        <item>18:30</item>
+    </string-array>
+
+    <string-array name="Type">
+        <item> Type d Inter</item>
+        <item>Dépannage</item>
+        <item>Entretien</item>
+        <item>Installation</item>
+        <item>Mise en Service</item>
+
+    </string-array>
+
+    <string name="app_name2">ExpandableListView</string>
+    <string name="group1">Piece 1</string>
+    <string name="group2">Piece 2</string>
+    <string name="group3">Piece 3</string>
+    <string name="group4">Piece 4</string>
+    <string name="group5">Piece 5</string>
+    <string name="group6">Piece 6</string>
+
+    <string-array name="group1">
+        <item>Pièce</item>
+        <item>Largeur</item>
+        <item>Longueur</item>
+        <item>HSP</item>
+        <item>Delta</item>
+        <item>Coef</item>
+
+    </string-array>
+
+    <string-array name="group2">
+        <item>item1</item>
+    </string-array>
+
+    <string-array name="group3">
+        <item>item1</item>
+    </string-array>
+
+    <string-array name="group4">
+        <item>item1</item>
+    </string-array>
+
+    <string-array name="group5">
+        <item>item1</item>
+    </string-array>
+
+    <string-array name="group6">
+        <item>item1</item>
+    </string-array>
+
+</resources>
