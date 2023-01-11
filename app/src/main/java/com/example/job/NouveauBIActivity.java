@@ -17,16 +17,19 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.kyanogen.signatureview.SignatureView;
+
+import com.github.gcacace.signaturepad.views.SignaturePad;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -34,8 +37,8 @@ import java.util.List;
 
 public class NouveauBIActivity extends AppCompatActivity {
 
-    Button button;
-    Bitmap bmp, Bitmap, scaledBitmap;
+    Button button, button4;
+    Bitmap bmp, Bitmap, scaledBitmap, imageView;
     Spinner Arrivéespinner, Départspinner, Typespinner, Villespinner;
     EditText Nom, Mail, Adresse, Com, Inter, Inter2, Inter3, Temps;
     Date dateObj;
@@ -43,8 +46,6 @@ public class NouveauBIActivity extends AppCompatActivity {
     List<String> listGroup;
     HashMap<String,List<String>> listItem;
     MainAdapter adapter;
-    SignatureView signatureView;
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -57,13 +58,13 @@ public class NouveauBIActivity extends AppCompatActivity {
         listItem = new HashMap<>();
         adapter = new MainAdapter( this,listGroup,listItem);
 
-        SignatureView signatureView = findViewById(R.id.signature_view);
-        Bitmap bitmap = signatureView.getSignatureBitmap();
-
-
 
         bmp = BitmapFactory.decodeResource(getResources(),R.drawable.logo);
         scaledBitmap = Bitmap.createScaledBitmap(bmp, 230, 230,false);
+
+        SignaturePad signaturePad = findViewById(R.id.signature_pad);
+        ImageView imageView = findViewById(R.id.imageView);
+
         Arrivéespinner = findViewById(R.id.Arrivéespinner);
         Départspinner = findViewById(R.id.Départspinner);
         Typespinner = findViewById(R.id.Typespinner);
@@ -84,6 +85,7 @@ public class NouveauBIActivity extends AppCompatActivity {
         createPDF();
 
     }
+
 
 
 
@@ -180,7 +182,13 @@ public class NouveauBIActivity extends AppCompatActivity {
                     canvas.drawText("Signature PFC", 100, 1800, myPaint);
                     canvas.drawText("Signature Client", 700, 1800, myPaint);
 
-                    canvas.drawBitmap(Bitmap, 100, 1900, myPaint);
+
+
+                    Bitmap bitmap = SignaturePad.getSignatureBitmap();
+                    imageView.setImageBitmap(bitmap);
+                    canvas.drawBitmap(imageView, 10, 10, myPaint);
+
+
 
 
 
