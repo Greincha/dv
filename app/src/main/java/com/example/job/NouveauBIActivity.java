@@ -37,8 +37,8 @@ import java.util.List;
 
 public class NouveauBIActivity extends AppCompatActivity {
 
-    Button button, button4;
-    Bitmap bmp, Bitmap, scaledBitmap, imageView;
+    Button button;
+    Bitmap bmp, scaledBitmap, signBitmap;
     Spinner Arrivéespinner, Départspinner, Typespinner, Villespinner;
     EditText Nom, Mail, Adresse, Com, Inter, Inter2, Inter3, Temps;
     Date dateObj;
@@ -46,6 +46,7 @@ public class NouveauBIActivity extends AppCompatActivity {
     List<String> listGroup;
     HashMap<String,List<String>> listItem;
     MainAdapter adapter;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -58,12 +59,8 @@ public class NouveauBIActivity extends AppCompatActivity {
         listItem = new HashMap<>();
         adapter = new MainAdapter( this,listGroup,listItem);
 
-
         bmp = BitmapFactory.decodeResource(getResources(),R.drawable.logo);
         scaledBitmap = Bitmap.createScaledBitmap(bmp, 230, 230,false);
-
-        SignaturePad signaturePad = findViewById(R.id.signature_pad);
-        ImageView imageView = findViewById(R.id.imageView);
 
         Arrivéespinner = findViewById(R.id.Arrivéespinner);
         Départspinner = findViewById(R.id.Départspinner);
@@ -85,10 +82,6 @@ public class NouveauBIActivity extends AppCompatActivity {
         createPDF();
 
     }
-
-
-
-
 
     private void createPDF() {
 
@@ -183,13 +176,15 @@ public class NouveauBIActivity extends AppCompatActivity {
                     canvas.drawText("Signature Client", 700, 1800, myPaint);
 
 
+                    SignaturePad signaturePad = findViewById(R.id.signature_pad);
+                    ImageView imageView = findViewById(R.id.imageView);
 
-                    Bitmap bitmap = SignaturePad.getSignatureBitmap();
+                    Bitmap bitmap = signaturePad.getSignatureBitmap();
                     imageView.setImageBitmap(bitmap);
-                    canvas.drawBitmap(imageView, 10, 10, myPaint);
 
+                    signBitmap = Bitmap.createScaledBitmap(imageView, 230, 230,false);
 
-
+                    canvas.drawBitmap(signBitmap, 10, 10, myPaint);
 
 
                     myPdfDocument.finishPage(myPage1);
